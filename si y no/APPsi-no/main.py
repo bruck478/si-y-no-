@@ -5,25 +5,31 @@ def main(page: ft.Page):
     page.title="¿Me perdonas?"
     page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
     page.vertical_alignment=ft.MainAxisAlignment.CENTER 
-    page.bgcolor="black"
+    page.bgcolor="blue"
     
-    lbli=ft.Text("¿Me perdonas?",
-                style=ft.TextStyle(size=40, weight="bold"))
+    lbll=ft.Text("¿Me perdonas?"
+                style=ft.TextThemeStyle(size=40, weight="blod"))
     
-    Ingi=ft.Image(src="triste.png",width=200, height=200)
+    Ingl=ft.Image(src="triste.png",width=200, height=200)
     
     btnSi=ft.ElevatedButton("Si",
                             color="green",
                             width=100,
                             height=50)
     
-    btrNo=ft.ElevatedButton("No"    ,   
+    btnNo=ft.ElevatedButton("No"    ,   
                             color="red",
                             width=100,
                             height=50)
 
-page.add(
-    ft.Column{}
-)
+    page.add(
+        ft.Column(
+            [
+                lbli,
+                Ingi,
+                ft.Row([btnSi,btnNo])
+            ]
+        )
+    )
 
 ft.app(main)
